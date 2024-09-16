@@ -13,8 +13,8 @@ else
     " Set up the plugin manager (Vim-Plug)
     call plug#begin('~/.vim/plugged')
         Plug 'nvim-lua/plenary.nvim'
-        Plug 'itchyny/lightline.vim'
         Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+        Plug 'itchyny/lightline.vim'
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'stevearc/oil.nvim'
@@ -54,7 +54,7 @@ EOF
     " Setup colorscheme
     set termguicolors
     colorscheme catppuccin-latte
-    let g:lightline = {'colorscheme': 'catppuccin-latte'}
+    let g:lightline = {'colorscheme': 'catppuccin'}
 
     " Save the file automatically when switching buffers or leaving insert mode
     autocmd BufLeave,InsertLeave * silent! wall
@@ -125,5 +125,4 @@ EOF
     " Map splits
     nnoremap <leader>sr :vsplit<CR>
     nnoremap <leader>sb :split<CR>
-
 endif
