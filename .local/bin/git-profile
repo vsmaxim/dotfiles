@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+
+import os
+import json
+import subprocess
+import io
+import sys
+
+
+def run_interactively(
+    command,
+    directory=None,
+    indent=4,
+):
+    p = subprocess.Popen(
+        command,
+        cwd=directory,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+
+    if p.stdout is None:
+        raise RuntimeError("No process stdout")
+
+    for line in io.TextIOWrapper(p.stdout, encoding="utf-8"):
+        print(" " * indent, end="")
+        print(line, end="")
+
+    return p.poll()
+
+
+if __name__ == "__main__":
+    cfg_path = os.path.expanduser("~/.config/git-profile.json")
+    profile = sys.argv[1]
+    indent = "  "
+
+    print(f"Setting up git profile `{profile}`...")
+
+    with open(cfg_path, "r") as fd:
+        profiles = json.load(fd)
+
+    if profile not in profiles:
+        print(f"Profile {profile} doesn't exist at {cfg_path}")
+        exit(1)
+
+    cfg_profile = profiles[profile]
+
+    username = cfg_profile["username"]
+    print(f"  setting user.name = {username}")
+    run_interactively(["git", "config", "user.name", username])
+
+    email = cfg_profile["email"]
+    print(f"  setting user.email = {email}")
+    run_interactively(["git", "config", "user.email", email])
+
+    gpg_key_id = cfg_profile["gpg_key_id"]
+    print(f"  setting user.signingkey = {email}")
+    run_interactively(["git", "config", "user.signingkey", gpg_key_id])
+    run_interactively(["gpg", "--list-keys", "user.signingkey", gpg_key_id])
+
+    print("  setting commit.gpgsign = true")
+    run_interactively(["git", "config", "commit.gpgsign", "true"])
+
+

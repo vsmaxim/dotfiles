@@ -1,0 +1,7 @@
+{
+    "python.linting.mypyEnabled": true,
+    "python.linting.ruffEnabled": true,
+    "python.formatting.provider": "ruff",
+    "rust-analyzer.rustfmt.extraArgs": ["--config", "max_width=100"],
+    "rust-analyzer.rustfmt.overrideCommand": ["rustfmt", "+nightly"]
+}
