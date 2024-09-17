@@ -103,14 +103,12 @@ EOF
     inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
     nnoremap <Leader>rl :CocCommand python.runLinting<CR>
-    nnoremap <Leader>si :CocCommand python.sortImports<CR>
-    nnoremap <Leader>oi :CocCommand pyright.organizeimports<CR>
     nnoremap <Leader>rs :CocCommand pyright.restartserver<CR>
+    nnoremap <Leader>oi :CocCommand editor.action.organizeImport<CR> 
     nnoremap <Leader>cf :call CocAction('format')<CR>
 
     " Format React and TS files on save
     autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx silent! CocCommand prettier.formatFile
-    autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx silent! CocCommand editor.action.organizeImport
     autocmd BufWritePre *.rs :call CocAction('runCommand', 'editor.action.formatDocument')
 
     " Setup oil - for better navigation
