@@ -1,1 +1,3 @@
 .local/bin/kitty
+.local/bin/keyring
+.local/bin/poetry
