@@ -55,3 +55,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+
+# kubectl editor
+export KUBE_EDITOR=nvim
