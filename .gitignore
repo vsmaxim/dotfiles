@@ -1,3 +1,4 @@
-.local/bin/kitty
-.local/bin/keyring
-.local/bin/poetry
+.local/bin/**/*
+!.local/bin/docker-start
+!.local/bin/docker-stop
+!.local/bin/git-profile
