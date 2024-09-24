@@ -2,3 +2,4 @@
 !.local/bin/docker-start
 !.local/bin/docker-stop
 !.local/bin/git-profile
+!.local/bin/kbfix
