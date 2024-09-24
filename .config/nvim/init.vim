@@ -85,6 +85,7 @@ EOF
       \ 'coc-clangd',
       \ 'coc-prettier',
       \ 'coc-rust-analyzer',
+      \ 'coc-go',
       \ ]
 
     set updatetime=300
