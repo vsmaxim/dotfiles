@@ -59,3 +59,9 @@ esac
 
 # kubectl editor
 export KUBE_EDITOR=nvim
+
+# aliases
+alias l="ls"
+alias ll="ls -lah"
+alias llt="ls -laht"
+alias cdh="cd ~"
