@@ -111,6 +111,7 @@ EOF
     " Format React and TS files on save
     autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx silent! CocCommand prettier.formatFile
     autocmd BufWritePre *.rs :call CocAction('runCommand', 'editor.action.formatDocument')
+    autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.formatDocument')
 
     " Setup oil - for better navigation
     nnoremap <leader>o :Oil<CR>
