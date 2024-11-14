@@ -117,6 +117,9 @@ EOF
     nnoremap <leader>o :Oil<CR>
     nnoremap <leader>O :Oil --float<CR>
 
+    " Hide highlight
+    nnoremap <leader>hh :noh<CR>
+
     " Find files using Telescope command-line sugar.
     nnoremap <leader>ff <cmd>Telescope find_files<cr>
     nnoremap <leader>fg <cmd>Telescope live_grep<cr>
