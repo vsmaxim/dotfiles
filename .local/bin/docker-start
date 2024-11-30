@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-sudo systemctl start docker.service 123123
+sudo systemctl start docker.service
 
