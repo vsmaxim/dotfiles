@@ -40,6 +40,7 @@ require("nvim-treesitter.configs").setup({
         "javascript",
         "tsx",
         "html",
+        "vue"
     },
 })
 
@@ -86,6 +87,7 @@ EOF
       \ 'coc-prettier',
       \ 'coc-rust-analyzer',
       \ 'coc-go',
+      \ '@yaegassy/coc-volar',
       \ ]
 
     set updatetime=300
