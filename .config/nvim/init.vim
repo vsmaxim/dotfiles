@@ -40,7 +40,6 @@ require("nvim-treesitter.configs").setup({
         "javascript",
         "tsx",
         "html",
-        "vue"
     },
 })
 
