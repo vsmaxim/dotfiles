@@ -21,6 +21,7 @@ else
         Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
         Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
         Plug 'github/copilot.vim'
+	Plug 'rmagatti/auto-session'
     call plug#end()
 
     " Setup plugins
@@ -46,6 +47,10 @@ require("nvim-treesitter.configs").setup({
 
 require("telescope").setup()
 require("telescope").load_extension("fzf")
+
+require("auto-session").setup {
+    suppressed_dirs = { "~/", "~/Projects", "~/HomeProjects" }
+}
 EOF
 
     " Enable syntax highlighting and indenting
@@ -108,6 +113,7 @@ EOF
     nnoremap <Leader>rs :CocCommand pyright.restartserver<CR>
     nnoremap <Leader>oi :CocCommand editor.action.organizeImport<CR> 
     nnoremap <Leader>cf :call CocAction('format')<CR>
+    nnoremap <Leader>er :CocCommand eslint.restart<CR>
 
     " Format React and TS files on save
     autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx silent! CocCommand prettier.formatFile
