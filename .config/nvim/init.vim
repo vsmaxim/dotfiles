@@ -86,7 +86,6 @@ EOF
       \ 'coc-prettier',
       \ 'coc-rust-analyzer',
       \ 'coc-go',
-      \ '@yaegassy/coc-volar',
       \ ]
 
     set updatetime=300
