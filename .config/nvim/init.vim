@@ -20,6 +20,7 @@ else
         Plug 'stevearc/oil.nvim'
         Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
         Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+        Plug 'github/copilot.vim'
     call plug#end()
 
     " Setup plugins
