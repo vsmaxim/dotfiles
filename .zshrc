@@ -66,5 +66,6 @@ alias ll="ls -lah"
 alias llt="ls -laht"
 alias cdh="cd ~"
 alias cdc="cd ~/dotfiles"
-alias n="nvim"
-alias nn="nvim ."
+alias cdp="cd ~/Projects"
+alias n="nvim ."
+
