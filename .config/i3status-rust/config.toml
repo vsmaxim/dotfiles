@@ -9,7 +9,6 @@ separator_bg = "#eff1f5"
 separator_fg = "#4c4f69"
 idle_bg = "#eff1f5"
 
-
 [icons]
 icons = "awesome4"
 
@@ -23,6 +22,10 @@ memory_mem = "\uf1c0" # fa-database
 memory_swap = "\uf0dc" # fa-sort
 time = "\uf133" # fa-calendar-o
 
+[[block]]
+block = "notify"
+driver = "dunst"
+format = "$icon {$notification_count.eng(w:1)|}"
 
 [[block]]
 block = "cpu"
@@ -54,9 +57,6 @@ cmd = "pavucontrol"
 block = "sound"
 format = "$icon $volume"
 
-[[block]]
-block = "notify"
-format = "$icon {$notification_count.eng(w:1) |}"
 
 [[block]]
 block = "time"
