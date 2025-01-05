@@ -46,13 +46,17 @@ warning = 20.0
 alert = 10.0
 format = "$icon $available.eng(w:2)"
 
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
 [[block]]
 block = "sound"
 format = "$icon $volume"
 
-[[block.click]]
-button = "left"
-cmd = "pavucontrol"
+[[block]]
+block = "notify"
+format = "$icon {$notification_count.eng(w:1) |}"
 
 [[block]]
 block = "time"
