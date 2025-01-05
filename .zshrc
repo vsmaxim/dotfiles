@@ -1,10 +1,11 @@
-# Start x
+# Start x 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   exec startx
 fi
 
-# Path
 export PATH=~/.local/bin:$PATH
+export EDITOR=nvim
+
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
