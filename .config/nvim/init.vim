@@ -21,6 +21,7 @@ else
         Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
         Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
         Plug 'github/copilot.vim'
+        Plug 'xiyaowong/transparent.nvim'
 	Plug 'rmagatti/auto-session'
     call plug#end()
 
