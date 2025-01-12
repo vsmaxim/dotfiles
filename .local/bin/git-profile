@@ -31,13 +31,22 @@ def run_interactively(
 
 if __name__ == "__main__":
     cfg_path = os.path.expanduser("~/.config/git-profile.json")
+    with open(cfg_path, "r") as fd:
+        profiles = json.load(fd)
+
+    if len(sys.argv) != 2:
+        print(f"Usage: {sys.argv[0]} <profile>")
+        print("Available profiles:")
+
+        for profile in profiles.keys():
+            print(f" - [{profile}] {profiles[profile]['email']}")
+
+        exit(1)
+
     profile = sys.argv[1]
     indent = "  "
 
     print(f"Setting up git profile `{profile}`...")
-
-    with open(cfg_path, "r") as fd:
-        profiles = json.load(fd)
 
     if profile not in profiles:
         print(f"Profile {profile} doesn't exist at {cfg_path}")
