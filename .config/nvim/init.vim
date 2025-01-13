@@ -82,6 +82,7 @@ EOF
     " CoC configs
     let g:coc_global_extensions = [
       \ 'coc-tsserver',
+      \ 'coc-eslint',
       \ 'coc-sh',
       \ 'coc-json',
       \ 'coc-html',
@@ -105,6 +106,7 @@ EOF
     nmap <silent> gy <Plug>(coc-type-definition)
     nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
+    nmap <leader>a <Plug>(coc-codeaction)
 
     inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
     inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
@@ -115,6 +117,7 @@ EOF
     nnoremap <Leader>oi :CocCommand editor.action.organizeImport<CR> 
     nnoremap <Leader>cf :call CocAction('format')<CR>
     nnoremap <Leader>er :CocCommand eslint.restart<CR>
+    nnoremap <Leader>ef :CocCommand eslint.executeAutofix<CR>
 
     " Format React and TS files on save
     autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx silent! CocCommand prettier.formatFile
