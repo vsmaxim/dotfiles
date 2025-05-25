@@ -69,4 +69,6 @@ alias cdh="cd ~"
 alias cdc="cd ~/dotfiles"
 alias cdp="cd ~/Projects"
 alias n="nvim ."
+alias va="source .venv/bin/activate"
+alias vd="deactivate"
 
