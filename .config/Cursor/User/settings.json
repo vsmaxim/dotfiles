@@ -1,0 +1,13 @@
+{
+    "window.commandCenter": true,
+    "workbench.colorTheme": "Visual Studio Light",
+    "git.openRepositoryInParentFolders": "never",
+    "editor.fontSize": 12,
+    "window.zoomLevel": 1,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ]
+}
