@@ -32,31 +32,23 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit ice as"command" from"gh-r" \
           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
           atpull"%atclone" src"init.zsh"
-
 zinit light starship/starship
-
 # https://github.com/starship/starship/issues/560
 precmd() { precmd() { echo "" } }
 alias clear="precmd() { precmd() { echo } } && clear"
+
+# # NVM configuration
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' lazy-cmd eslint prettier typescript pnpm turbo
+zinit snippet OMZ::plugins/nvm/nvm.plugin.zsh
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# pnpm
-export PNPM_HOME="/home/maxim-vasilev/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
+# k8s-handle completion
+eval "$(_K8S_HANDLE_COMPLETE=zsh_source k8s-handle)"
 
 # kubectl editor
 export KUBE_EDITOR=nvim
