@@ -4,6 +4,8 @@
     "python.formatting.provider": "ruff",
     "pyright.organizeimports.provider": "ruff",
     "eslint.format.enable": true,
+    "eslint.experimental.useFlatConfig": true,
+    "eslint.workingDirectories": [{"mode": "auto"}],
     "typescript.preferences.importModuleSpecifier": "relative",
     "rust-analyzer.rustfmt.extraArgs": ["--config", "max_width=100"],
     "rust-analyzer.rustfmt.overrideCommand": ["rustfmt", "+nightly"]
