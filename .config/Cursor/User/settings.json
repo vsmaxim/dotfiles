@@ -1,13 +1,35 @@
 {
     "window.commandCenter": true,
-    "workbench.colorTheme": "Visual Studio Light",
-    "git.openRepositoryInParentFolders": "never",
+    "workbench.colorTheme": "Catppuccin Latte",
+    "git.openRepositoryInParentFolders": "always",
     "editor.fontSize": 12,
+    "editor.fontFamily": "JetBrains Mono",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontFamily": "JetBrains Mono",
     "window.zoomLevel": 1,
+    "vim.handleKeys": {
+        "<C-p>": false
+    },
+    "vim.useSystemClipboard": true,
     "vim.insertModeKeyBindings": [
         {
-            "before": ["j", "k"],
-            "after": ["<Esc>"]
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
         }
-    ]
+    ],
+    "ruff.trace.server": "messages",
+    "ruff.logLevel": "debug",
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    }
 }
