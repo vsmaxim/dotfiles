@@ -1,4 +1,7 @@
 [aliases.class]
 Google-chrome = "chrome"
-datagrip = "datagrip"
+jetbrains-datagrip = "datagrip"
+jetbrains-idea = "idea"
+jetbrains-pycharm = "pycharm"
+jetbrains-webstorm = "webstorm"
 
