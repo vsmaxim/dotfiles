@@ -22,7 +22,7 @@ else
         Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
         Plug 'github/copilot.vim'
         Plug 'xiyaowong/transparent.nvim'
-	Plug 'rmagatti/auto-session'
+        Plug 'rmagatti/auto-session'
     call plug#end()
 
     " Setup plugins
@@ -50,7 +50,23 @@ require("telescope").setup()
 require("telescope").load_extension("fzf")
 
 require("auto-session").setup {
-    suppressed_dirs = { "~/", "~/Projects", "~/HomeProjects" }
+    suppressed_dirs = { "~/", "~/Projects", "~/HomeProjects" },
+    session_lens = {
+        load_on_setup = true,
+        mappings = {
+            delete_session = { "i", "<C-D>" },
+            alternate_session = { "i", "<C-S>" },
+            copy_session = { "i", "<C-Y>" },
+        },
+        picker_opts = {
+            -- Telescope theme options (uncomment if you want to customize)
+            -- border = true,
+            -- layout_config = {
+            --   width = 0.8,
+            --   height = 0.5,
+            -- },
+        },
+    },
 }
 EOF
 
@@ -137,6 +153,11 @@ EOF
     nnoremap <leader>fb <cmd>Telescope buffers<cr>
     nnoremap <leader>fh <cmd>Telescope help_tags<cr>
     nnoremap <leader>fr <cmd>Telescope resume<cr>
+
+    " Auto-session keybindings
+    nnoremap <leader>wr <cmd>SessionSearch<CR>
+    nnoremap <leader>ws <cmd>SessionSave<CR>
+    nnoremap <leader>wa <cmd>SessionToggleAutoSave<CR>
 
     " Map splits
     nnoremap <leader>sr :vsplit<CR>

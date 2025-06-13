@@ -60,7 +60,16 @@ alias llt="ls -laht"
 alias cdh="cd ~"
 alias cdc="cd ~/dotfiles"
 alias cdp="cd ~/Projects"
-alias n="nvim ."
+alias n="nvim"
+alias nn="nvim ."
 alias va="source .venv/bin/activate"
 alias vd="deactivate"
 
+
+# pnpm
+export PNPM_HOME="/home/vsmaxim/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
