@@ -1,35 +1,85 @@
 {
-    "window.commandCenter": true,
-    "workbench.colorTheme": "Catppuccin Latte",
-    "git.openRepositoryInParentFolders": "always",
-    "editor.fontSize": 12,
-    "editor.fontFamily": "JetBrains Mono",
-    "terminal.integrated.fontSize": 12,
-    "terminal.integrated.fontFamily": "JetBrains Mono",
-    "window.zoomLevel": 1,
-    "vim.handleKeys": {
-        "<C-p>": false
-    },
-    "vim.useSystemClipboard": true,
-    "vim.insertModeKeyBindings": [
-        {
-            "before": [
-                "j",
-                "k"
-            ],
-            "after": [
-                "<Esc>"
-            ]
-        }
-    ],
-    "ruff.trace.server": "messages",
-    "ruff.logLevel": "debug",
-    "[python]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll": "explicit",
-            "source.organizeImports": "explicit"
-        },
-        "editor.defaultFormatter": "charliermarsh.ruff"
+  "window.commandCenter": true,
+  "workbench.colorTheme": "Catppuccin Latte",
+  "git.openRepositoryInParentFolders": "always",
+  "editor.fontSize": 12,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.lineNumbers": "relative",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "window.zoomLevel": 1,
+  "vim.leader": ",",
+  "vim.handleKeys": {
+    "<C-p>": false
+  },
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
     }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "e", "f"],
+      "commands": ["eslint.executeAutofix"]
+    },
+    {
+      "before": ["<leader>", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f", "g"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "f", "s"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    {
+      "before": ["<leader>", "f", "w"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
+    {
+      "before": ["<leader>", "f", "c"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["<leader>", "c", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "o", "i"],
+      "commands": ["editor.action.organizeImports"]
+    }
+  ],
+  "python.languageServer": "None",
+  "ruff.trace.server": "messages",
+  "ruff.logLevel": "debug",
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "git.autofetch": true,
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.statusBarItem.enabled": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
