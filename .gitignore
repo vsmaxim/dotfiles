@@ -1,4 +1,9 @@
 .local/bin/**/*
+.config/Cursor/**/*
+.config/Code/**/*
+!.config/Cursor/User/settings.json
+!.config/Cursor/User/keybindings.json
+!.config/Code/User/settings.json
 !.local/bin/docker-start
 !.local/bin/docker-stop
 !.local/bin/git-profile
