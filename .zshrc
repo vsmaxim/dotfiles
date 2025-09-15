@@ -73,3 +73,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+[ -s "/home/vsmaxim/.jabba/jabba.sh" ] && source "/home/vsmaxim/.jabba/jabba.sh"
