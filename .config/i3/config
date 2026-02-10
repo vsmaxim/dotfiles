@@ -48,7 +48,6 @@ gaps inner 18px
 # Bar
 bar {
   position top
-  padding 2px 18px
   status_command i3status-rs
 
   colors {
