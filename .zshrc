@@ -37,11 +37,6 @@ zinit light starship/starship
 precmd() { precmd() { echo "" } }
 alias clear="precmd() { precmd() { echo } } && clear"
 
-# # NVM configuration
-zstyle ':omz:plugins:nvm' lazy yes
-zstyle ':omz:plugins:nvm' lazy-cmd eslint prettier typescript pnpm turbo
-zinit snippet OMZ::plugins/nvm/nvm.plugin.zsh
-
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
