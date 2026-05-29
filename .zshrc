@@ -52,6 +52,7 @@ export KUBE_EDITOR=nvim
 alias l="ls"
 alias ll="ls -lah"
 alias llt="ls -laht"
+alias cx="claude --enable-auto-mode"
 alias cdh="cd ~"
 alias cdc="cd ~/dotfiles"
 alias cdp="cd ~/Projects"
@@ -59,6 +60,11 @@ alias n="nvim"
 alias nn="nvim ."
 alias va="source .venv/bin/activate"
 alias vd="deactivate"
+
+# Claude ls/cd for worktrees
+alias cls="ls -lah .claude/worktrees"
+ccd() { cd ".claude/worktrees/$1" }
+compdef '_files -W .claude/worktrees -/' ccd
 
 
 # pnpm
