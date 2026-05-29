@@ -68,10 +68,15 @@ compdef '_files -W .claude/worktrees -/' ccd
 
 
 # pnpm
-export PNPM_HOME="/home/vsmaxim/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
 # pnpm end
-[ -s "/home/vsmaxim/.jabba/jabba.sh" ] && source "/home/vsmaxim/.jabba/jabba.sh"
+[ -s "$HOME/.jabba/jabba.sh" ] && source "$HOME/.jabba/jabba.sh"
+
+
+# node
+export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
