@@ -1,4 +1,7 @@
 .local/bin/**/*
+.local/pipx/
+.local/share/
+.local/state/
 .config/Cursor/**/*
 .config/Code/**/*
 !.config/Cursor/User/settings.json
