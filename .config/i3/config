@@ -6,41 +6,27 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:JetBrainsMono Nerd Font 10
 
-# Color scheme
-set $rosewater #dc8a78
-set $flamingo #dd7878
-set $pink #ea76cb
-set $mauve #8839ef
-set $red #d20f39
-set $maroon #e64553
-set $peach #fe640b
-set $yellow #df8e1d
-set $green #40a02b
-set $teal #179299
-set $sky #04a5e5
-set $sapphire #209fb5
-set $blue #1e66f5
-set $lavender #7287fd
-set $text #4c4f69
-set $subtext1 #5c5f77
-set $subtext0 #6c6f85
-set $overlay2 #7c7f93
-set $overlay1 #8c8fa1
-set $overlay0 #9ca0b0
-set $surface2 #acb0be
-set $surface1 #bcc0cc
-set $surface0 #ccd0da
-set $base #eff1f5
-set $mantle #e6e9ef
-set $crust #dce0e8
+# Color scheme - Ayu Dark
+set $bg        #0b0e14
+set $bg_alt    #131721
+set $fg        #bfbdb6
+set $ui        #565b66
+set $accent    #e6b450
+set $blue      #59c2ff
+set $cyan      #95e6cb
+set $green     #aad94c
+set $orange    #ff8f40
+set $red       #f07178
+set $purple    #d2a6ff
+set $comment   #6c7380
 
-# target                 title     bg        text   indicator  border
-client.focused           $lavender $lavender $base  $rosewater $lavender
-client.focused_inactive  $overlay0 $overlay0 $text  $rosewater $overlay0
-client.unfocused         $overlay0 $overlay0 $text  $rosewater $overlay0
-client.urgent            $peach    $base     $peach $overlay0  $peach
-client.placeholder       $overlay0 $base     $text  $overlay0  $overlay0
-client.background        $base
+# target                 title    bg       text  indicator border
+client.focused           $accent  $accent  $bg   $orange   $accent
+client.focused_inactive  $ui      $ui      $fg   $orange   $ui
+client.unfocused         $ui      $ui      $fg   $orange   $ui
+client.urgent            $red     $bg      $red  $ui       $red
+client.placeholder       $ui      $bg      $fg   $ui       $ui
+client.background        $bg
 
 # Gaps
 gaps inner 18px
@@ -51,16 +37,16 @@ bar {
   status_command i3status-rs
 
   colors {
-    background         $base
-    statusline         $text
-    focused_statusline $text
-    focused_separator  $base
+    background         $bg
+    statusline         $fg
+    focused_statusline $fg
+    focused_separator  $bg
 
-    # target           border bg        text
-    focused_workspace  $base  $mauve    $crust
-    active_workspace   $base  $surface2 $text
-    inactive_workspace $base  $base     $text
-    urgent_workspace   $base  $red      $crust
+    # target           border bg       text
+    focused_workspace  $bg    $accent  $bg
+    active_workspace   $bg    $ui      $fg
+    inactive_workspace $bg    $bg      $fg
+    urgent_workspace   $bg    $red     $bg
   }
 }
 

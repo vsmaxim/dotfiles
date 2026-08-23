@@ -1,0 +1,96 @@
+/* Ayu Dark waybar theme */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 11pt;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: #0b0e14;
+  color: #bfbdb6;
+  border-bottom: 1px solid #131721;
+}
+
+tooltip {
+  background: #131721;
+  border: 1px solid #e6b450;
+  color: #bfbdb6;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  background-color: transparent;
+  color: #bfbdb6;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+}
+
+#workspaces button:hover {
+  background: #131721;
+  color: #e6b450;
+}
+
+#workspaces button.active {
+  background: #e6b450;
+  color: #0b0e14;
+}
+
+#workspaces button.urgent {
+  background: #f07178;
+  color: #0b0e14;
+}
+
+#window {
+  padding: 0 10px;
+  color: #565b66;
+}
+
+#clock,
+#cpu,
+#memory,
+#disk,
+#network,
+#pulseaudio,
+#battery,
+#tray,
+#language {
+  padding: 0 10px;
+  margin: 0 2px;
+  color: #bfbdb6;
+}
+
+#clock {
+  color: #e6b450;
+  font-weight: bold;
+}
+
+#cpu.warning,
+#memory.warning,
+#disk.warning,
+#battery.warning {
+  color: #e6b450;
+}
+
+#cpu.critical,
+#memory.critical,
+#disk.critical,
+#battery.critical {
+  color: #f07178;
+}
+
+#battery.charging {
+  color: #aad94c;
+}
+
+#network.disconnected {
+  color: #f07178;
+}
+
+#pulseaudio.muted {
+  color: #565b66;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}

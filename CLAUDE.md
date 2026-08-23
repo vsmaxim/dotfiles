@@ -15,12 +15,15 @@ Follows XDG Base Directory conventions:
 
 ## Configured Applications
 
-- **WM/Desktop:** i3wm + i3status-rust + picom + rofi
-- **Terminal:** Kitty
-- **Shell:** Zsh (ZINIT plugin manager, Starship prompt)
-- **Editors:** Neovim (vim-plug, CoC LSP), Cursor, VS Code, IdeaVim
+Two parallel desktop sessions are configured — Hyprland is primary, i3 is kept for the NVIDIA box where Wayland is unreliable. Both stay in sync visually.
+
+- **Wayland session:** Hyprland + waybar + mako + rofi-wayland + hyprpaper/hyprlock/hypridle
+- **X11 session:** i3wm + i3status-rust + picom + rofi + dunst + i3wsr + feh
+- **Shared:** Kitty terminal, Zsh (ZINIT + Starship), Neovim (vim-plug, CoC), Cursor/VS Code, IdeaVim
 - **Version managers:** pyenv, nvm (lazy-loaded), jabba (Java)
-- **Theme:** Catppuccin Latte everywhere (i3, rofi, kitty, nvim, Cursor), JetBrains Mono font
+- **Theme:** Ayu Dark everywhere (Hyprland, i3, waybar, i3status-rust, rofi, kitty, mako), JetBrains Mono Nerd Font
+
+When changing the theme, update *all* of these in lockstep so both sessions stay coherent.
 
 ## Gitignore Strategy
 
@@ -29,6 +32,8 @@ Most of `.local/bin/` and `.config/Code/` / `.config/Cursor/` are ignored. Only 
 ## Key Details
 
 - Neovim uses vim-plug (`:PlugInstall`) and tree-sitter (`:TSUpdate`)
-- `.zshrc` auto-installs ZINIT on first run and auto-starts X11 on VT1
+- `.zshrc` auto-installs ZINIT on first run and auto-starts X11 on VT1 (Hyprland is launched from a display manager)
 - `git-profile` script in `.local/bin/` manages multiple Git identities with GPG signing
-- i3 config references custom scripts in `.local/bin/` for keyboard layout and VPN
+- i3 config references custom scripts in `.local/bin/` for keyboard layout (`kbfix`, X11-only — Hyprland handles `us,ru` + `caps_toggle` natively in `input { kb_options }`)
+- `hyprpaper.conf` expects a wallpaper at `~/wallpapers/default.jpg` — drop one there before first launch
+- Hyprland keybinds intentionally mirror i3 (Mod = Super, hjkl focus/move, 1-0 workspaces, etc.) so muscle memory carries over

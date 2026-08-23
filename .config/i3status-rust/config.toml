@@ -1,13 +1,22 @@
 icons_format = "{icon}"
 
 [theme]
-theme = "ctp-latte"
+theme = "plain"
 
 [theme.overrides]
 separator = "|"
-separator_bg = "#eff1f5"
-separator_fg = "#4c4f69"
-idle_bg = "#eff1f5"
+separator_bg = "#0b0e14"
+separator_fg = "#bfbdb6"
+idle_bg = "#0b0e14"
+idle_fg = "#bfbdb6"
+info_bg = "#0b0e14"
+info_fg = "#59c2ff"
+good_bg = "#0b0e14"
+good_fg = "#aad94c"
+warning_bg = "#0b0e14"
+warning_fg = "#e6b450"
+critical_bg = "#0b0e14"
+critical_fg = "#f07178"
 
 [icons]
 icons = "awesome4"

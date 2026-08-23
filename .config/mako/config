@@ -1,0 +1,29 @@
+# mako — Wayland notification daemon (Ayu Dark)
+
+font=JetBrainsMono Nerd Font 11
+background-color=#131721
+text-color=#bfbdb6
+border-color=#e6b450
+border-size=2
+border-radius=4
+default-timeout=5000
+ignore-timeout=0
+margin=12
+padding=12
+width=380
+height=120
+anchor=top-right
+icons=1
+max-icon-size=48
+layer=overlay
+
+[urgency=low]
+border-color=#565b66
+default-timeout=3000
+
+[urgency=normal]
+border-color=#e6b450
+
+[urgency=critical]
+border-color=#f07178
+default-timeout=0
